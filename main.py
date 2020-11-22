@@ -4,8 +4,10 @@ import pandas
 
 def generar_dataframe_palabras(text):
     # Escribe el codigo para generar el diccionario con las ocurrencias de cada palabra
-    diccionario_ocurrencias = {}
+    text_lista = text.split()
+    diccionario_ocurrencias = {clave:text_lista.count(clave) for clave in text_lista}
     # Convertir el diccionario de ocurrencias en un Dataframe usando panda
+    dataframe = pandas.DataFrame(list(diccionario_ocurrencias.items()), columns = ['Categoria', 'Cantidad'])
     return dataframe
 
 
